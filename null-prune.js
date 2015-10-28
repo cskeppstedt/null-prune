@@ -19,9 +19,10 @@
   }
 
   function keys (obj) {
-    const ownKeys = []
+    var key
+    var ownKeys = []
 
-    for (let key in obj) {
+    for (key in obj) {
       if (hasOwnProperty(obj, key)) {
         ownKeys.push(key)
       }
@@ -30,9 +31,12 @@
     return ownKeys
   }
 
-  function nullPrune (inputObject, { objectKey, parentObject }) {
+  function nullPrune (inputObject, context) {
+    var objectKey = context.objectKey
+    var parentObject = context.parentObject
+
     keys(inputObject).forEach(function(key) {
-      let node = inputObject[key]
+      var node = inputObject[key]
 
       if (isObject(node)) {
         nullPrune(node, {
