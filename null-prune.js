@@ -52,8 +52,6 @@
     if (keys(inputObject).length === 0) {
       delete parentObject[objectKey]
     }
-
-    return inputObject
   }
 
   return function(inputObject) {
@@ -61,6 +59,7 @@
       return inputObject
     }
 
-    return nullPrune(inputObject, {})
+    nullPrune(inputObject, {})
+    return inputObject
   }
 })
