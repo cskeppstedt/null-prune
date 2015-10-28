@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm test -- --watch",
-    "test": "mocha --compilers js:babel/register"
+    "test": "standard && mocha --compilers js:babel/register"
   },
   "author": "Christoffer Skeppstedt <chris.skeppstedt@klarna.com> (https://github.com/cskeppstedt/)",
   "license": "Apache License 2.0",

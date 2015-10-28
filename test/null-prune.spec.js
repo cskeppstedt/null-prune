@@ -1,20 +1,21 @@
+/* eslint-env node, mocha */
+
 import { expect } from 'chai'
 import nullPrune from '../null-prune'
 
-describe('null-prune', function() {
-
-  it('should be a function', function() {
+describe('null-prune', function () {
+  it('should be a function', function () {
     expect(nullPrune).to.be.a('function')
   })
 
-  it('should return the input object if not an object', function() {
+  it('should return the input object if not an object', function () {
     const input = 123
     const expected = 123
 
     expect(nullPrune(input)).to.eql(expected)
   })
 
-  it('should be destructive (modify input object)', function() {
+  it('should be destructive (modify input object)', function () {
     const input = {
       a: 1,
       b: null,
@@ -32,7 +33,7 @@ describe('null-prune', function() {
     expect(output === input).to.be.true
   })
 
-  it('should prune a null leaf among non-null siblings', function() {
+  it('should prune a null leaf among non-null siblings', function () {
     const input = {
       a: 1,
       b: null,
@@ -47,7 +48,7 @@ describe('null-prune', function() {
     expect(nullPrune(input)).to.eql(expected)
   })
 
-  it('should prune a node with only null-leafs', function() {
+  it('should prune a node with only null-leafs', function () {
     const input = {
       a: 1,
       c: {
@@ -63,7 +64,7 @@ describe('null-prune', function() {
     expect(nullPrune(input)).to.eql(expected)
   })
 
-  it('should prune a chain of nodes with null-leafs', function() {
+  it('should prune a chain of nodes with null-leafs', function () {
     const input = {
       c: {
         x: {

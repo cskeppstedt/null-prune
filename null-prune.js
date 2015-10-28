@@ -1,16 +1,17 @@
+/* eslint-env amd */
 (function (name, definition) {
   if (typeof define === 'function') {
     // AMD
-    define(definition);
+    define(definition)
   } else if (typeof module !== 'undefined' && module.exports) {
     // Node.js
-    module.exports = definition();
+    module.exports = definition()
   } else {
     // Browser
-    window[name] = definition();
+    window[name] = definition()
   }
 })('nullPrune', function () {
-  function hasOwnProperty(obj, property) {
+  function hasOwnProperty (obj, property) {
     return Object.prototype.hasOwnProperty.call(obj, property)
   }
 
@@ -35,7 +36,7 @@
     var objectKey = context.objectKey
     var parentObject = context.parentObject
 
-    keys(inputObject).forEach(function(key) {
+    keys(inputObject).forEach(function (key) {
       var node = inputObject[key]
 
       if (isObject(node)) {
@@ -53,7 +54,7 @@
     }
   }
 
-  return function(inputObject) {
+  return function (inputObject) {
     if (!isObject(inputObject)) {
       return inputObject
     }
