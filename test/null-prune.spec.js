@@ -1,5 +1,4 @@
 import { expect } from 'chai'
-import jsc from 'jsverify'
 import nullPrune from '../null-prune'
 
 describe('null-prune', function() {
