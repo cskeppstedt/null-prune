@@ -1,18 +1,29 @@
 {
   "name": "null-prune",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library to prune a JS object from nulls, recursively.",
   "main": "index.js",
   "scripts": {
     "start": "npm test -- --watch",
     "test": "standard && mocha --compilers js:babel/register"
   },
-  "author": "Christoffer Skeppstedt <chris.skeppstedt@klarna.com> (https://github.com/cskeppstedt/)",
-  "license": "Apache License 2.0",
+  "author": "Christoffer Skeppstedt <c.skeppstedt@gmail.com> (https://github.com/cskeppstedt/)",
+  "license": "Apache-2.0",
   "devDependencies": {
-    "babel": "^5.8.29",
-    "chai": "^3.4.0",
-    "mocha": "^2.3.3",
-    "standard": "^5.3.1"
-  }
+    "babel": "5.8.x",
+    "chai": "3.4.x",
+    "mocha": "2.3.x",
+    "standard": "5.3.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cskeppstedt/null-prune.git"
+  },
+  "keywords": [
+    "null",
+    "object",
+    "prune",
+    "recursive",
+    "tree"
+  ]
 }
