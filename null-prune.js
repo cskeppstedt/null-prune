@@ -1,19 +1,14 @@
 (function (name, definition) {
-
+  if (typeof define === 'function') {
     // AMD
-    if (typeof define === 'function') {
-        define(definition);
-    }
-
+    define(definition);
+  } else if (typeof module !== 'undefined' && module.exports) {
     // Node.js
-    else if (typeof module !== 'undefined' && module.exports) {
-        module.exports = definition();
-    }
-
+    module.exports = definition();
+  } else {
     // Browser
-    else {
-        window[name] = definition();
-    }
+    window[name] = definition();
+  }
 })('nullPrune', function () {
   function hasOwnProperty(obj, property) {
     return Object.prototype.hasOwnProperty.call(obj, property)
