@@ -1,0 +1,31 @@
+{
+  "name": "null-prune",
+  "main": "null-prune.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cskeppstedt/null-prune",
+  "authors": [
+    "Christoffer Skeppstedt <c.skeppstedt@gmail.com>"
+  ],
+  "description": "A library to prune a JS object from nulls, recursively.",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "null",
+    "object",
+    "prune",
+    "recursive",
+    "tree"
+  ],
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "packages",
+    "test",
+    "tests"
+  ]
+}

@@ -49,7 +49,7 @@
       }
     })
 
-    if (keys(inputObject).length === 0) {
+    if (parentObject && keys(inputObject).length === 0) {
       delete parentObject[objectKey]
     }
   }

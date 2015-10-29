@@ -15,6 +15,26 @@ describe('null-prune', function () {
     expect(nullPrune(input)).to.eql(expected)
   })
 
+  it('should return if the input is an empty object', function () {
+    const input = {}
+
+    expect(nullPrune(input)).to.eql(input)
+  })
+
+  it('should return an empty object if all keys are pruned', function () {
+    const input = {
+      a: null,
+      b: null,
+      c: {
+        d: null
+      }
+    }
+
+    const expected = {}
+
+    expect(nullPrune(input)).to.eql(expected)
+  })
+
   it('should be destructive (modify input object)', function () {
     const input = {
       a: 1,
