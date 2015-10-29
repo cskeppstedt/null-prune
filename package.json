@@ -1,6 +1,6 @@
 {
   "name": "null-prune",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library to prune a JS object from nulls, recursively.",
   "main": "index.js",
   "scripts": {
