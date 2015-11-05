@@ -11,20 +11,17 @@
     window[name] = definition()
   }
 })('nullPrune', function () {
-  function hasOwnProperty (obj, property) {
-    return Object.prototype.hasOwnProperty.call(obj, property)
-  }
-
   function isObject (input) {
     return input && (typeof input === 'object')
   }
 
-  function keys (obj) {
+  function ownKeys (obj) {
     var key
     var ownKeys = []
+    var hasOwnProperty = Object.prototype.hasOwnProperty
 
     for (key in obj) {
-      if (hasOwnProperty(obj, key)) {
+      if (hasOwnProperty.call(obj, key)) {
         ownKeys.push(key)
       }
     }
@@ -35,9 +32,14 @@
   function nullPrune (inputObject, context) {
     var objectKey = context.objectKey
     var parentObject = context.parentObject
+    var keys = ownKeys(inputObject)
+    var k
+    var key
+    var node
 
-    keys(inputObject).forEach(function (key) {
-      var node = inputObject[key]
+    for (k in keys) {
+      key = keys[k]
+      node = inputObject[key]
 
       if (isObject(node)) {
         nullPrune(node, {
@@ -47,9 +49,9 @@
       } else if (node == null) {
         delete inputObject[key]
       }
-    })
+    }
 
-    if (parentObject && keys(inputObject).length === 0) {
+    if (parentObject && ownKeys(inputObject).length === 0) {
       delete parentObject[objectKey]
     }
   }
