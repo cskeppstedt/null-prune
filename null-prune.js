@@ -1,7 +1,7 @@
-/* eslint-env amd */
 (function (name, definition) {
   if (typeof define === 'function') {
     // AMD
+    /* eslint-env amd */
     define(definition)
   } else if (typeof module !== 'undefined' && module.exports) {
     // Node.js
