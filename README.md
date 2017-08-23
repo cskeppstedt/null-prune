@@ -1,6 +1,7 @@
 # null-prune
 
 [![Build Status](https://travis-ci.org/cskeppstedt/null-prune.svg?branch=master)](https://travis-ci.org/cskeppstedt/null-prune)
+[![npm version](https://badge.fury.io/js/null-prune.svg)](https://www.npmjs.com/package/null-prune)
 
 A library to prune a JS object from nulls, recursively. This will leave a
 compact object with no "empty" sub-objects.
